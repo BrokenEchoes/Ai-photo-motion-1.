@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Photo Studio</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#111;
+  color:#fff;
+}
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:18px;
+}
+
+h1{
+  text-align:center;
+  margin:5px 0 20px;
+}
+
+.card{
+  background:#1c1c1c;
+  padding:16px;
+  border-radius:16px;
+  margin-bottom:15px;
+}
+
+label{
+  display:block;
+  margin-bottom:7px;
+  font-weight:bold;
+}
+
+input,
+textarea,
+button{
+  width:100%;
+  border:none;
+  border-radius:10px;
+  padding:13px;
+  font-size:15px;
+}
+
+input,
+textarea{
+  background:#292929;
+  color:#fff;
+  outline:none;
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.key-buttons{
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+
+.key-buttons button{
+  flex:1;
+}
+
+button{
+  background:#333;
+  color:#fff;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+button:active{
+  transform:scale(.98);
+}
+
+.save{
+  background:#176b3a;
+}
+
+.clear{
+  background:#8b2424;
+}
+
+.generate{
+  background:#7c3aed;
+  margin-top:15px;
+  font-size:17px;
+  padding:15px;
+}
+
+.mode-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.mode-buttons button{
+  flex:1;
+}
+
+.mode-buttons button.active{
+  background:#7c3aed;
+}
+
+.upload-box{
+  border:2px dashed #555;
+  padding:15px;
+  border-radius:12px;
+  margin-top:12px;
+}
+
+.preview-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:12px;
+}
+
+.preview-grid img{
+  width:100%;
+  border-radius:12px;
+  background:#000;
+  min-height:100px;
+  object-fit:cover;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.quick-grid button{
+  font-size:13px;
+  padding:11px 5px;
+}
+
+.status{
+  margin-top:12px;
+  padding:12px;
+  background:#252525;
+  border-radius:10px;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+
+.result{
+  margin-top:15px;
+}
+
+.result img{
+  width:100%;
+  border-radius:15px;
+  display:block;
+}
+
+.hidden{
+  display:none;
+}
+
+.small{
+  font-size:12px;
+  color:#aaa;
+  margin-top:7px;
+  line-height:1.5;
+}
+
+.saved{
+  color:#55e38a;
+  font-size:13px;
+  margin-top:7px;
+}
+
+@media(max-width:500px){
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🤖 AI Photo Studio</h1>
+
+<sk_1WmpoQLfI0KjcKqSLponG1l0iiyTL7UI>
+<div class="card">
+
+<label>🔐 Pollinations API Key</label>
+
+<input
+  type="password"
+  id="apiKey"
+  placeholder="Paste your API key here"
+  autocomplete="off"
+>
+
+<div class="key-buttons">
+
+<button class="save" id="saveKey" type="button">
+💾 Save Key
+</button>
+
+<button class="clear" id="clearKey" type="button">
+🗑️ Clear Key
+</button>
+
+</div>
+
+<div id="keyStatus" class="small">
+Key is stored only on this device.
+</
